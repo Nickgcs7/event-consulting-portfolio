@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Consulting - Creating Unforgettable Experiences</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">EventPro</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Creating</span>
+                <span class="title-line">Unforgettable</span>
+                <span class="title-line">Experiences</span>
+            </h1>
+            <p class="hero-subtitle">Transforming visions into reality through expert event planning and flawless execution</p>
+            <a href="portfolio.html" class="cta-button">View Our Work</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Corporate Events</h3>
+                    <p>From conferences to team building, we create engaging corporate experiences that align with your business goals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Luxury Celebrations</h3>
+                    <p>Weddings, galas, and milestone celebrations executed with elegance, attention to detail, and sophistication.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎪</div>
+                    <h3>Brand Activations</h3>
+                    <p>Immersive brand experiences that captivate audiences and create lasting impressions in the marketplace.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Creative Production</h3>
+                    <p>Full-service production including design, staging, audio-visual, and technical execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Events Executed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Working with this team transformed our annual conference into an unforgettable experience. Their attention to detail and creative vision exceeded all expectations."</p>
+                <div class="testimonial-author">
+                    <strong>Sarah Mitchell</strong>
+                    <span>CEO, TechVision Inc.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EventPro. Crafting memorable experiences worldwide.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Page-specific animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero animation timeline
+            const heroTl = gsap.timeline();
+            
+            heroTl
+                .from('.nav', { y: -100, opacity: 0, duration: 0.8, ease: 'power2.out' })
+                .from('.title-line', {
+                    y: 100,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: 'power3.out'
+                }, '-=0.4')
+                .from('.hero-subtitle', { y: 30, opacity: 0, duration: 0.6 }, '-=0.3')
+                .from('.cta-button', { scale: 0, opacity: 0, duration: 0.5, ease: 'back.out(1.7)' }, '-=0.2');
+
+            // Floating elements animation
+            gsap.to('.element-1', {
+                y: -30,
+                x: 20,
+                rotation: 360,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            gsap.to('.element-2', {
+                y: 40,
+                x: -30,
+                rotation: -360,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            gsap.to('.element-3', {
+                y: -20,
+                x: 30,
+                rotation: 180,
+                duration: 3.5,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+
+            // Service cards scroll animation
+            gsap.from('.service-card', {
+                scrollTrigger: {
+                    trigger: '.services-grid',
+                    start: 'top 80%'
+                },
+                y: 100,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power2.out'
+            });
+
+            // Stats counter animation
+            gsap.from('.stat-item', {
+                scrollTrigger: {
+                    trigger: '.stats',
+                    start: 'top 70%',
+                    onEnter: () => animateCounters()
+                },
+                scale: 0.5,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'back.out(1.7)'
+            });
+
+            // Testimonial animation
+            gsap.from('.testimonial-card', {
+                scrollTrigger: {
+                    trigger: '.testimonials',
+                    start: 'top 80%'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power2.out'
+            });
+        });
+
+        // Counter animation function
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2;
+                const increment = target / (duration * 60);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+    </script>
+</body>
+</html>
